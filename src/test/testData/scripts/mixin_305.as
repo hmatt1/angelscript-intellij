@@ -1,0 +1,1 @@
+class Clss : Mix {}

@@ -1,0 +1,4 @@
+void Test()
+{
+  int[] a;
+}

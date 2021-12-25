@@ -1,0 +1,4 @@
+void Test()
+{
+  MyFunc();
+}

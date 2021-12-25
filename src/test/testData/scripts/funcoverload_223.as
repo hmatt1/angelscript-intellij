@@ -1,0 +1,3 @@
+void ScriptFunc(int m)
+{
+}

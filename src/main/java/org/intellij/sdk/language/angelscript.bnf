@@ -1,0 +1,242 @@
+{
+  parserClass="org.intellij.sdk.language.parser.AngelScriptParser"
+  parserUtilClass="org.intellij.sdk.language.parser.AngelScriptParserUtil"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="AngelScript"
+  psiImplClassSuffix="Impl"
+  psiPackage="org.intellij.sdk.language.psi"
+  psiImplPackage="org.intellij.sdk.language.psi.impl"
+
+  elementTypeHolderClass="org.intellij.sdk.language.psi.AngelScriptElementTypes"
+  elementTypeClass="org.intellij.sdk.language.psi.AngelScriptElementType"
+  tokenTypeClass="org.intellij.sdk.language.psi.AngelScriptTokenType"
+  psiImplUtilClass="org.intellij.sdk.language.psi.impl.AngelScriptPsiImplUtil"
+
+    tokens = [
+
+        t_elif_comment="regexp:#elif([^#]*|\n)"
+        // if we regenerate the .flex lexec, change the elif comment to this: T_ELIF_COMMENT="#elif" !([^]* "#endif" [^]*) ("#endif")?
+        t_block_comment='regexp:/\*(.|\n)*?\*/'
+        // if we regenerate the .flex lexer, change block comment to this: T_BLOCK_COMMENT="/*" !([^]* "*/" [^]*) ("*/")?
+        t_line_comment="regexp://.*"
+        t_pre_comment="regexp:#.*"
+
+        t_null = 'null'
+        t_true = 'true'
+        t_false = 'false'
+        t_function = 'function'
+
+        t_cast = 'cast'
+        t_void = 'void'
+        t_case = 'case'
+        t_default = 'default'
+        t_return = 'return'
+        t_try = 'try'
+        t_catch = 'catch'
+        t_continue = 'continue'
+        t_if = 'if'
+        t_else = 'else'
+        t_do = 'do'
+        t_while = 'while'
+        t_for = 'for'
+        t_break = 'break'
+        t_switch = 'switch'
+        t_override = 'override'
+        t_final = 'final'
+        t_explicit = 'explicit'
+        t_property = 'property'
+        t_int = 'int'
+        t_int8 = 'int8'
+        t_int16 = 'int16'
+        t_int32 = 'int32'
+        t_int64 = 'int64'
+        t_uint = 'uint'
+        t_uint8 = 'uint8'
+        t_uint16 = 'uint16'
+        t_uint32 = 'uint32'
+        t_uint64 = 'uint64'
+        t_float = 'float'
+        t_double = 'double'
+        t_bool = 'bool'
+        t_auto = 'auto'
+        t_const = 'const'
+        t_in = 'in'
+        t_out = 'out'
+        t_inout = 'inout'
+        t_mixin = 'mixin'
+        t_private = 'private'
+        t_protected = 'protected'
+        // hard to distinguish between the keyword get and someone naming an identifier "get", like  dict.get('a', u);
+//        t_get = 'get'
+//        t_set = 'set'
+        t_external = 'external'
+        t_shared = 'shared'
+        t_funcdef = 'funcdef'
+        t_enum = 'enum'
+        t_import = 'import'
+        t_from = 'from'
+        t_interface = 'interface'
+        t_namespace = 'namespace'
+        t_typedef = 'typedef'
+        t_abstract = 'abstract'
+        t_class = 'class'
+        t_struct = 'struct'
+
+        t_LBRACE               =  '{'
+        t_RBRACE               =  '}'
+        t_LBRACK               =  '['
+        t_RBRACK               =  ']'
+        t_LPAREN               =  '('
+        t_RPAREN               =  ')'
+        t_COLON                =  ':'
+        t_SEMICOLON            =  ';'
+        t_COMMA                =  ','
+        t_ASSIGN               =  '='
+        t_EQ                   =  '=='
+        t_NOT                  =  '!'
+        t_NOT_EQ               =  '!='
+        t_PLUS                 =  '+'
+        t_PLUS_PLUS            =  '++'
+        t_PLUS_ASSIGN          =  '+='
+        t_MINUS                =  '-'
+        t_MINUS_MINUS          =  '--'
+        t_MINUS_ASSIGN         =  '-='
+        t_COND_OR              =  '||'
+        t_BIT_OR_ASSIGN        =  '|='
+        t_BIT_AND              =  '&'
+        t_BIT_CLEAR_ASSIGN     =  '&^='
+        t_BIT_CLEAR            =  '&^'
+        t_COND_AND             =  '&&'
+        t_BIT_AND_ASSIGN       =  '&='
+        t_BIT_OR               =  '|'
+        t_LESS                 =  '<'
+//        t_SHIFT_LEFT           =  '<<'
+        t_SHIFT_LEFT_ASSIGN    =  '<<='
+        t_SEND_CHANNEL         =  '<-'
+        t_LESS_OR_EQUAL        =  '<='
+        t_BIT_XOR              =  '^'
+        t_BIT_XOR_ASSIGN       =  '^='
+        t_LOGIC_XOR            =  '^^'
+        t_MUL_ASSIGN           =  '*='
+        t_MUL                  =  '*'
+        t_QUOTIENT_ASSIGN      =  '/='
+        t_QUOTIENT             =  '/'
+        t_REMAINDER            =  '%'
+        t_REMAINDER_ASSIGN     =  '%='
+        t_GREATER              =  '>'
+//        t_SHIFT_RIGHT          =  '>>'
+        t_SHIFT_RIGHT_ASSIGN   =  '>>='
+    //    t_SHIFT_SHIFT_RIGHT    =  '>>>'
+        t_GREATER_OR_EQUAL     =  '>='
+        t_VAR_ASSIGN           =  ':='
+        t_DOT                  =  '.'
+        t_TRIPLE_DOT           =  '...'
+        t_EXPONENT             =  '**'
+
+        t_AND_TEXT             =  'and'
+        t_OR_TEXT              =  'or'
+        t_XOR_TEST             =  'xor'
+        t_EXP_ASSIGN           =  '**='
+        t_SHIFT_SHIFT_RIGHT_ASSIN = '>>>='
+
+        t_quest='?'
+        t_colon=':'
+
+        t_tilde = '~'
+        t_at = '@'
+
+        t_coloncolon = '::'
+
+        t_WHITE_SPACE = 'regexp:\s+'
+
+        t_IS                   =  'regexp:is'
+
+        t_bits="regexp:(0b|0B|0o|0O|0d|0D|0x|0X)([0123456789AaBbCcDdEeF])+"
+        t_ident='regexp:([A-Za-z_][_0-9A-Za-z]*)'
+        t_numb='regexp:([0-9]+\.?[0-9]*(f|(e[0-9]+))?)'
+        t_numb_2='regexp:(\.[0-9]*(f|(e[0-9]+))?)'
+
+        t_string_single="regexp:'([^'\\]|\\.)*'"
+        t_string_double='regexp:"([^"\\]|\\.)*"'
+        t_string_block='regexp:"""(.|\n)*"""'
+    ]
+
+}
+
+SCRIPT        ::= (SETTING | IMPORT | ENUM | TYPEDEF | CLAZZ | MIXIN | INTERFACE | FUNCDEF | VIRTPROP | VAR | STATEMENT | FUNC | FUNCC | NAMESPA | ';' | STRUCT)* {recoverWhile=script_recover}
+private script_recover ::= !(';')
+//SCRIPT        ::= (SETTING | IMPORT | ENUM | TYPEDEF | CLAZZ | MIXIN | INTERFACE | FUNCDEF | VIRTPROP | VAR | FUNC | NAMESPA | ';')*
+CLAZZ         ::= ('shared' | 'abstract' | 'final' | 'external')* t_class IDENTIFIER (';' | ((':' VARACCESS (',' VARACCESS)*)? '{' (SETTING | VIRTPROP | FUNC | FUNCC | VAR | FUNCDEF | STATEMENT | STRUCT )* '}')) {pin=2}
+TYPEDEF       ::= 'typedef' PRIMTYPE IDENTIFIER ';' {pin=1}
+NAMESPA       ::= ('namespace' IDENTIFIER ('::' IDENTIFIER)* '{' (SETTING | IMPORT | ENUM | TYPEDEF | CLAZZ | MIXIN | INTERFACE | FUNCDEF | VIRTPROP | VAR | FUNC | FUNCC | ';' | STATEMENT | NAMESPA | STRUCT )* '}') {pin=1}
+FUNCC         ::= ('shared' | 'external')* ('private' | 'protected')? IDENTIFIER PARAMLIST 'const'? FUNCATTR (';' | STATBLOCK)
+FUNC          ::= ('shared' | 'external')* ('private' | 'protected')? ((TYPE '&'?) | '~')? IDENTIFIER PARAMLIST 'const'? FUNCATTR (';' | STATBLOCK)
+INTERFACE     ::= ('external' | 'shared')* ('interface') IDENTIFIER (';' | ((':' IDENTIFIER (',' IDENTIFIER)*)? '{' (VIRTPROP | INTFMTHD)* '}'))
+STRUCT        ::= ('external' | 'shared')* 'struct' IDENTIFIER (';' | STATBLOCK)
+VAR           ::= ('private'|'protected')? TYPE IDENTIFIER (( '=' (INITLIST | CONDITION)) | ARGLIST)? (',' IDENTIFIER (( '=' (INITLIST | CONDITION)) | ARGLIST)?)* ';' {
+  mixin="org.intellij.sdk.language.psi.impl.AngelScriptNamedElementImpl"
+  implements="org.intellij.sdk.language.psi.AngelScriptNamedElement"
+  methods=[getIdent getName setName getNameIdentifier getPresentation]
+//  pin=5
+ // recoverWhile="var_recover"
+}
+private var_recover ::= !(';' | TYPE)
+IMPORT        ::= 'import' TYPE '&'? IDENTIFIER PARAMLIST FUNCATTR 'from' STRING ';' {pin=1}
+ENUM          ::= ('shared' | 'external')* 'enum' IDENTIFIER (';' | ('{' (IDENTIFIER ('=' EXPR)? (',' IDENTIFIER ('=' EXPR)?)* ',' ?)? '}')) {pin=2}
+FUNCDEF       ::= ('external' | 'shared')* 'funcdef' TYPE '&'? IDENTIFIER PARAMLIST ';' {pin=2}
+VIRTPROP      ::= ('private' | 'protected')? TYPE '&'? IDENTIFIER '{' (('get' | 'set') 'const'? FUNCATTR? (STATBLOCK | ';'))* '}'
+MIXIN         ::= 'mixin' CLAZZ {pin=1}
+INTFMTHD      ::= TYPE '&'? IDENTIFIER PARAMLIST 'const'? ';'
+STATBLOCK     ::= '{' (VAR | STATEMENT )* '}'
+PARAMLIST     ::= '(' ('void' | (TYPE TYPEMOD IDENTIFIER? ('=' EXPR)? (',' TYPE TYPEMOD IDENTIFIER? ('=' EXPR)?)*))? ')'
+TYPEMOD       ::= ('&' ('in' | 'out' | 'inout')?)?
+TYPE          ::= 'const'? SCOPE DATATYPE ('<' TYPE (',' TYPE)* '>')? ( ('[' ']') | ('@' 'const'?) )*
+INITLIST      ::= '{' (ASSIGN | INITLIST)? (',' (ASSIGN | INITLIST)?)* '}'
+SCOPE         ::= '::'? (IDENTIFIER '::')* (IDENTIFIER ('<' TYPE (',' TYPE)* '>')? '::')?
+DATATYPE      ::= (IDENTIFIER | PRIMTYPE | '?' | 'auto')
+PRIMTYPE      ::= 'void' | 'int' | 'int8' | 'int16' | 'int32' | 'int64' | 'uint' | 'uint8' | 'uint16' | 'uint32' | 'uint64' | t_float | 'double' | 'bool' {pin=1}
+FUNCATTR      ::= ('override' | 'final' | 'explicit' | 'property')*
+STATEMENT     ::= (IF | FOR | WHILE | RETURN | STATBLOCK | BREAK | CONTINUE | DOWHILE | SWITCH | EXPRSTAT | TRY)
+SWITCH        ::= 'switch' '(' ASSIGN ')' '{' CASE* '}' {pin=1}
+BREAK         ::= 'break' ';' {pin=1}
+FOR           ::= 'for' '(' (VAR | EXPRSTAT) EXPRSTAT (ASSIGN (',' ASSIGN)*)? ')' STATEMENT {pin=1}
+WHILE         ::= 'while' '(' ASSIGN ')' STATEMENT {pin=1}
+DOWHILE       ::= 'do' STATEMENT 'while' '(' ASSIGN ')' ';' {pin=1}
+IF            ::= 'if' '(' ASSIGN ')' STATEMENT ('else' STATEMENT)? {pin=1}
+CONTINUE      ::= 'continue' ';' {pin=1}
+EXPRSTAT      ::= ASSIGN? ';' // {recoverWhile="exprstat_recover"}
+//private exprstat_recover ::= !(';')
+TRY           ::= 'try' STATBLOCK 'catch' STATBLOCK {pin=1}
+RETURN        ::= 'return' ASSIGN? ';' {pin=1}
+CASE          ::= (('case' EXPR) | 'default') ':' STATEMENT*
+EXPR          ::= EXPRTERM (EXPROP EXPRTERM)*
+EXPRTERM      ::= ((TYPE '=')? INITLIST) | ((EXPRPREOP)* EXPRVALUE (EXPRPOSTOP)*)
+EXPRVALUE     ::= LAMBDA | 'void' | CONSTRUCTCALL | FUNCCALL | VARACCESS | CAST | LITERAL | '(' ASSIGN ')'
+CONSTRUCTCALL ::= TYPE ARGLIST
+EXPRPREOP     ::= '-' | '+' | '!' | '++' | '--' | '~' | '@'
+EXPRPOSTOP    ::= ASSIGN | ('.' (FUNCCALL | IDENTIFIER)) | ('[' (IDENTIFIER ':')? ASSIGN (',' (IDENTIFIER ':' ASSIGN)?)* ']') | ARGLIST | '++' | '--'
+SETTING       ::= '[' EXPR? (TYPE? IDENTIFIER '=' ((INITLIST | EXPR)) | ARGLIST)? (','? IDENTIFIER (( '=' (INITLIST | EXPR)) | ARGLIST)?)* SETTING* ']'
+CAST          ::= 'cast' '<' TYPE '>' '(' ASSIGN ')' {pin=1}
+LAMBDA        ::= 'function' ARGLIST STATBLOCK {pin=1}
+LITERAL       ::= NUMBER | STRING | BITS | t_true | t_false | t_null
+FUNCCALL      ::= SCOPE IDENTIFIER ARGLIST
+VARACCESS     ::= SCOPE IDENTIFIER
+ARGLIST       ::= '(' ((IDENTIFIER ':')? ASSIGN (',' (IDENTIFIER ':')? ASSIGN)*)? ')'
+ASSIGN        ::= CONDITION ( ASSIGNOP ASSIGN )?
+CONDITION     ::= EXPR ('?' ASSIGN ':' ASSIGN)?
+EXPROP        ::= MATHOP | BITOP | COMPOP | LOGICOP
+BITOP         ::= '&' | '|' | '^' | t_LESS t_LESS t_LESS | t_LESS t_LESS | t_GREATER t_GREATER t_GREATER | t_GREATER t_GREATER
+MATHOP        ::= '+' | '-' | '*' | '/' | '' | '**' | '%'
+COMPOP        ::= '==' | '!=' | t_LESS | '<=' | t_GREATER | '>=' | '!' t_IS | t_IS
+LOGICOP       ::= '&&' | '||' | '^^' | 'and' | 'or' | 'xor'
+ASSIGNOP      ::= '=' | '+=' | '-=' | '*=' | '/=' | '|=' | '&=' | '^=' | '%=' | '**=' | '<<=' | '>>=' | '>>>='
+IDENTIFIER ::= t_ident
+NUMBER ::= t_numb | t_numb_2
+STRING        ::= (t_string_single | t_string_double | t_string_block)+
+//LETTER        ::= '_' | ' ' //| 'A' | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z
+BITS ::= t_bits
+//BITS          ::= ( '0b' | '0B' | '0o' | '0O' | '0d' | '0D' | '0x' | '0X' ) ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 'A' | 'a' | 'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'E' | 'e' | 'F' )+
+
+

@@ -1,0 +1,4 @@
+class mystruct
+{
+  mytype var;
+};

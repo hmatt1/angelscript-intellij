@@ -1,0 +1,1 @@
+tmpl<int> t;

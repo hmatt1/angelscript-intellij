@@ -1,0 +1,1 @@
+SetObjectPosition( GetWorldPositionByName() );

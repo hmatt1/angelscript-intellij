@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.angelscript-intellij</id>
+    <name>AngelScript Language Support</name>
+    <vendor email="matt@example.com" url="https://github.com/hmatt1/angelscript-intellij">hmatt1</vendor>
+
+    <description>This plugin adds AngelScript Language Support</description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <fileType name="AngelScript File" implementationClass="org.intellij.sdk.language.AngelScriptFileType"
+                  fieldName="INSTANCE" language="AngelScript" extensions="as"/>
+
+        <completion.contributor language="AngelScript"
+                                implementationClass="org.intellij.sdk.language.AngelScriptCompletionContributor"/>
+
+        <lang.parserDefinition language="AngelScript"
+                               implementationClass="org.intellij.sdk.language.AngelScriptParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="AngelScript"
+                                       implementationClass="org.intellij.sdk.language.AngelScriptSyntaxHighlighterFactory"/>
+        <lang.refactoringSupport language="AngelScript"
+                                 implementationClass="org.intellij.sdk.language.AngelScriptRefactoringSupportProvider"/>
+<!--        <psi.referenceContributor language="AngelScript" implementation="org.intellij.sdk.language.AngelScriptReferenceContributor"/>-->
+        <gotoSymbolContributor
+                implementation="org.intellij.sdk.language.AngelScriptChooseByNameContributor"/>
+        <colorSettingsPage implementation="org.intellij.sdk.language.AngelScriptColorSettingsPage"/>
+
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
