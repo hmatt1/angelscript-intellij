@@ -1,18 +1,50 @@
-# angelscript-intellij
-AngelScript Intellij Plugin Language Support
+# AngelScript Intellij Plugin Language Support
 
-## Color Settings
+For people who want to use Intellij to develop with AngelScript.
+
+## Features
+
+### Token Highlighting
+
+Currently all tokens can have syntax highlighting, such as `==`, `;`, keywords, etc. Identifier highlighting such as function names is not yet implemented.
+
+### Color Settings
+
+All highlighter colors can be changed on the settings page.
 
 ![](./assets/Intellij%20AngelScript%20Color%20Settings.png)
 
-## Test cases sources
+### Variable Name Code-completion
+
+Only variable names are currently implemented. For example, if you have a script such as:
+
+```as
+int foo = 1;
+int bar = 3 + f
+```
+
+As soon as you type the `f`, the option to auto-complete `foo` will pop up.
+
+### Limitations
+
+When using `#if`, `#elif`, etc, anything in the `#elif` block is treated as a comment. This is because I couldn't figure out how to get it working with mismatched braces.
+
+## Contributing
+
+Contributions are welcome!!!!! 😄
+
+### Open an issue
+
+Feel free to [open an issue](https://github.com/hmatt1/angelscript-intellij/issues/new) to report bugs, request features, or ask for help with contributing.
+
+### Adding a Test Case
  
-Scripts for test scenarios are located in [scripts](./src/test/testData/scripts)
+Scripts for test scenarios are located in [scripts](./src/test/testData/scripts). New script files can be added there, and then the file name needs to be added to [file_names.csv](./src/test/resources/file_names.csv]).
 
-I downloaded the test cases from [svn](http://svn.code.sf.net/p/angelscript/code/trunk/sdk/tests/test_feature/)
-and parsed them into separate files using the [run.sh](./util/run.sh) to get the test cases.
+Most of the test cases are from the AngelScript [svn repository](http://svn.code.sf.net/p/angelscript/code/trunk/sdk/tests/test_feature/)
+and parsed them into separate files using the [run.sh](./util/run.sh) to get the test cases, and then manually cleaned them up.
 
-Additionally, I downloaded sources for various [OpenPlanet plugins](https://openplanet.nl/files) and added them to the test scenarios.
+Additionally, I downloaded sources for various [OpenPlanet plugins](https://openplanet.nl/files) and added them to a seperate test scenario, with the file names in [ops.csv](./src/test/resources/ops.csv) and the scripts stored under [opscripts](./src/test/testData/opscripts).
 
 ## Resource
 
