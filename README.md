@@ -2,6 +2,10 @@
 
 For people who want to use Intellij to develop with AngelScript.
 
+## Available soon!
+
+Here is the preview page on the [Intellij Plugins Marketplace](https://plugins.jetbrains.com/plugin/18276-angelscript-language-support?preview=true)
+
 ## Features
 
 ### Token Highlighting
