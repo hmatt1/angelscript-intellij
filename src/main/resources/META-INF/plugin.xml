@@ -11,6 +11,8 @@
         To update the syntax highlighting color preferences, go to Settings -> Editor -> Color Scheme -> AngelScript.
     </description>
 
+    <change-notes>Initial release of the plugin. Syntax Highlighting, variable code completion, settings pages for syntax highlighter colors.</change-notes>
+
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
