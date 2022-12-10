@@ -21,8 +21,8 @@ jobs:
       - name: Java Version
         run: java -version
       - name: Gradle Version
-        run: ./gradlew -version
+        run: gradle -version
       - name: Gradle Build
-        run: ./gradlew build test
+        run: gradle build test
       - name: Sign and Publish
-        run: ./gradlew signPlugin publishPlugin
+        run: gradle signPlugin publishPlugin
