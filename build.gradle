@@ -58,14 +58,6 @@ signPlugin {
     privateKey = System.getenv('PRIVATE_PEM')
 
     password = System.getenv('PEM_PASSWORD')
-
-    doFirst {
-        println "*** ENV LENGTHS ***"
-        println System.getenv('CHAIN_CRT').length()
-        println System.getenv('PRIVATE_PEM').length()
-        println System.getenv('PEM_PASSWORD').length()
-        println System.getenv('INTELLIJ_TOKEN').length()
-    }
 }
 
 publishPlugin {
