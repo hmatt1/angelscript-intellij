@@ -55,6 +55,18 @@ Additionally, I downloaded sources for various [OpenPlanet plugins](https://open
 1. Update the plugin version in [build.gradle](https://github.com/hmatt1/angelscript-intellij/blob/main/build.gradle#L21)
 2. Manually run the [Plugin Publishing Workflow](https://github.com/hmatt1/angelscript-intellij/actions/workflows/publish.yml)
 
+## Generating a new key-pair for signing
+
+Powershell:
+
+```
+ & 'C:\Program Files\Git\usr\bin\openssl.exe' genpkey  -aes-256-cbc  -algorithm RSA  -out private_encrypted.pem -pkeyopt rsa_keygen_bits:4096
+
+ & 'C:\Program Files\Git\usr\bin\openssl.exe' rsa  -in private_encrypted.pem  -out private.pem
+
+ & 'C:\Program Files\Git\usr\bin\openssl.exe' req  -key private.pem -new  -x509  -days 365 -out chain.crt
+```
+
 ## Resource
 
 - https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_bnf.html
