@@ -50,6 +50,11 @@ and parsed them into separate files using the [run.sh](./util/run.sh) to get the
 
 Additionally, I downloaded sources for various [OpenPlanet plugins](https://openplanet.nl/files) and added them to a seperate test scenario, with the file names in [ops.csv](./src/test/resources/ops.csv) and the scripts stored under [opscripts](./src/test/testData/opscripts).
 
+## Publishing the Plugin
+
+1. Update the plugin version in [build.gradle](https://github.com/hmatt1/angelscript-intellij/blob/main/build.gradle#L21)
+2. Manually run the [Plugin Publishing Workflow](https://github.com/hmatt1/angelscript-intellij/actions/workflows/publish.yml)
+
 ## Resource
 
 - https://www.angelcode.com/angelscript/sdk/docs/manual/doc_script_bnf.html
