@@ -43,8 +43,8 @@ intellij {
 
 patchPluginXml {
     changeNotes = """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+      Added support for Intellij 2022.2.3
+      """
 }
 test {
     useJUnitPlatform()
@@ -62,4 +62,5 @@ signPlugin {
 
 publishPlugin {
     token = System.getenv('INTELLIJ_TOKEN')
+
 }
