@@ -2,6 +2,7 @@
     <id>com.angelscript-intellij</id>
     <name>AngelScript Language Support</name>
     <vendor email="matt@example.com" url="https://github.com/hmatt1/angelscript-intellij">hmatt1</vendor>
+    <idea-version since-build="223"/>
 
     <description>
         AngelScript is a free, open source, flexible, and cross-platform scripting library meant to be embedded in applications.

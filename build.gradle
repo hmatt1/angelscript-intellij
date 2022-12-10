@@ -6,7 +6,7 @@ buildscript {
 
 
 plugins {
-    id 'org.jetbrains.intellij' version '1.2.1'
+    id 'org.jetbrains.intellij' version '1.10.1'
     id 'java'
     id 'idea'
 }
@@ -18,7 +18,7 @@ idea {
 }
 
 group 'com.angelscript'
-version '1.0-SNAPSHOT'
+version '1.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -34,7 +34,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '2021.2.3'
+    version = '2022.2.3'
     plugins = ['com.intellij.java']
 }
 
