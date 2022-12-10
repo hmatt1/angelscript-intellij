@@ -18,7 +18,7 @@ idea {
 }
 
 group 'com.angelscript'
-version '1.1-SNAPSHOT'
+version '1.1.0'
 
 repositories {
     mavenCentral()
@@ -48,3 +48,14 @@ test {
 }
 
 sourceSets.main.java.srcDirs 'src/main/gen'
+signPlugin {
+    certificateChain =  System.getenv('CHAIN_CRT')
+
+    privateKey = System.getenv('PRIVATE_PEM')
+
+    password = System.getenv('PEM_PASSWORD')
+}
+
+publishPlugin {
+    token = System.getenv('INTELLIJ_TOKEN')
+}

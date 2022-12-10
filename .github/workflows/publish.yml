@@ -1,0 +1,21 @@
+name: Publish Plugin
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      CHAIN_CRT: ${{ secrets.CHAIN_CRT }}
+      INTELLIJ_TOKEN: ${{ secrets.INTELLIJ_TOKEN }}
+      PEM_PASSWORD: ${{ secrets.PEM_PASSWORD }}
+      PRIVATE_PEM: ${{ secrets.PRIVATE_PEM }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Gradle Build
+        run: ./gradlew build test
+      - name: Sign and Publish
+        run: ./gradlew signPlugin publishPlugin
