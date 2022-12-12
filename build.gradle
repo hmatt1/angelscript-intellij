@@ -37,13 +37,13 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version = '2022.2.3'
+    version = '2022.3'
     plugins = ['com.intellij.java']
 }
 
 patchPluginXml {
     changeNotes = """
-      Added support for Intellij 2022.2.3
+      Added support for Intellij 2022.3 and up
       """
 }
 test {
