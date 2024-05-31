@@ -2,7 +2,7 @@
     <id>com.angelscript-intellij</id>
     <name>AngelScript Language Support</name>
     <vendor email="matt@example.com" url="https://github.com/hmatt1/angelscript-intellij">hmatt1</vendor>
-    <idea-version since-build="223"/>
+    <idea-version since-build="241"/>
 
     <description>
         AngelScript is a free, open source, flexible, and cross-platform scripting library meant to be embedded in applications.
@@ -17,6 +17,7 @@
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
