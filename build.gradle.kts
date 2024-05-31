@@ -27,16 +27,16 @@ idea {
 }
 
 group "com.angelscript"
-version "1.4.0"
+version "1.4.0r"
 
 java.sourceCompatibility = JavaVersion.VERSION_17
 java.targetCompatibility = JavaVersion.VERSION_17
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity("2024.1.2")
+        rider("2024.1.2")
 
-        bundledPlugin("com.intellij.java")
+//        bundledPlugin("com.intellij.java")
 
         pluginVerifier()
         zipSigner()
@@ -57,12 +57,12 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellijPlatform {
     pluginConfiguration {
-        version = "1.4.0"
+        version = "1.4.0r"
         group = "com.angelscript"
         description = """
         AngelScript is a free, open source, flexible, and cross-platform scripting library meant to be embedded in applications.
 
-        This plugin adds language support for people who are using Intellij to develop with AngelScript. It adds features such as syntax highlighting, code-completion for variables, and allows Intellij to identify AngelScript files using the .as extension.
+        This plugin adds language support for people who are using Rider to develop with AngelScript. It adds features such as syntax highlighting, code-completion for variables, and allows Intellij to identify AngelScript files using the .as extension.
 
         To update the syntax highlighting color preferences, go to Settings -> Editor -> Color Scheme -> AngelScript.
         """
