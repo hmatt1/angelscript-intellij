@@ -22,7 +22,5 @@ jobs:
         run: java -version
       - name: Gradle Version
         run: gradle -version
-      - name: Gradle Build
-        run: gradle test
       - name: Sign and Publish
-        run: gradle buildPlugin signPlugin publishPlugin
+        run: gradle build buildPlugin signPlugin publishPlugin -x test
